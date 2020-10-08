@@ -48,7 +48,14 @@ export default function Home() {
             value={formValues.value}
             onChange={handleChange}
           />
-          <input type="submit" name="submit" onClick={submitForm} />
+          <div className={styles.btnContainer} onClick={submitForm}>
+            <input
+              className={styles.btn}
+              type="submit"
+              name="submit"
+              onClick={submitForm}
+            />
+          </div>
         </form>
         <h4>Encrypted:</h4>
         <p>{encrypted}</p>
