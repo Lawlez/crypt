@@ -1,5 +1,5 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import decrypt from "../decrypter";
+import decrypt from "../../func/decrypter";
 
 export default (req, res) => {
   console.log(req);
@@ -9,7 +9,8 @@ export default (req, res) => {
 
   if (QUERY.data && METHOD === "GET") {
     res.statusCode = 200;
-    res.json(decrypt(QUERY.data));
+    res.setHeader("Content-Type", "txt/plain");
+    res.json({ data: decrypt(QUERY.data) });
     return;
   }
   res.json("unauthorized");

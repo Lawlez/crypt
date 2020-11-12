@@ -4,6 +4,10 @@ import randomBytes from "randombytes";
 export const decrypt = (data, KEY) => {
   const key = "64aa7aaa8959ff23b1a6951204d3d5be"; //KEY ? KEY : randomBytes(32);
   const algorithm = "aes256";
+  if (!data) {
+    console.log("fuck off");
+    return;
+  }
   if (typeof data !== "string") {
     throw "invalid data obj";
   }
