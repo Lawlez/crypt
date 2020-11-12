@@ -87,7 +87,6 @@
   cursor: pointer;
   position: relative;
   color: #0f0;
-  top: -96px;
   margin-bottom: 48px;
   clip-path: polygon(92.5% 0, 100% 23%, 100% 100%, 8.1% 100%, 0% 75.9%, 0 0);
 }
@@ -147,8 +146,37 @@
     0 0
   );
 }
+.resContainer {
+  min-height: 40px;
+  max-height: 512px;
+  max-width: 680px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow-wrap: anywhere;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.3);
+  clip-path: polygon(
+    92.5% 0,
+    100% 23.5%,
+    99.8% 99.8%,
+    8.1% 100%,
+    0% 74.3%,
+    0 0
+  );
+}
+.resContainer > p {
+  overflow-wrap: anywhere;
+  overflow: hidden;
+  max-width: 512px;
+}
+.section {
+  overflow-wrap: anywhere;
+  overflow: hidden;
+}
 .btnContainer:hover {
-  animation: glitch-animation 3s linear 0s infinite;
+  animation: glitch-animation 0.1s linear 0s;
 }
 
 /* secret trick */
