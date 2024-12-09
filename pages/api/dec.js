@@ -1,5 +1,5 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import decrypt from "../../func/decrypter";
+import decrypt from "../../func/decrypterECB";
 
 export default (req, res) => {
   console.log(req);

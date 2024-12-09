@@ -9,16 +9,16 @@ export const encrypter = (data, IV, KEY) => {
   /*if (typeof data !== "string") {
     throw "invalid data obj";
   }*/
-  const key = KEY ? KEY : "64aa7aaa8959ff23b1a6951204d3d5be"; //KEY ? KEY : randomBytes(32);
-  const algorithm = "aes256";
+  const key = KEY ? KEY : "YELLOW SUBMARINE"; //KEY ? KEY : randomBytes(32);
+  const algorithm = "aes-256-ecb";
   const iv = IV ? IV : randomBytes(16);
 
-  const cipher = crypto.createCipheriv(algorithm, key, iv);
-  const enc = cipher.update(data);
+  const cipher = crypto.createCipher(algorithm, key);
+  const enc = cipher.update(data, 'hex', 'utf-8');
 
   const encrypted = Buffer.concat([enc, cipher.final()]);
 
-  return iv.toString("hex") + ":" + encrypted.toString("hex");
+  return /**  iv.toString("hex") + ":" + **/encrypted//.toString("hex");
 };
 
 export default encrypter;
